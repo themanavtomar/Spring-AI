@@ -4,6 +4,10 @@
     {
       "source": "/api/:path*",
       "destination": "http://spring-ai-support-agent-env.eba-7zqjz3p2.ap-south-2.elasticbeanstalk.com/api/:path*"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/index.html"
     }
   ]
 }
