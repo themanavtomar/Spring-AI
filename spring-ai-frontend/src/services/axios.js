@@ -8,7 +8,7 @@ const api = axios.create({
 });
 
 export const registerUser = async (name, email, password) => {
-  const response = await api.post("/api/auth/register", {
+  const response = await api.post("/auth/register", {
     name,
     email,
     password,
@@ -18,7 +18,7 @@ export const registerUser = async (name, email, password) => {
 };
 
 export const loginUser = async (email, password) => {
-  const response = await api.post("/api/auth/login", {
+  const response = await api.post("/auth/login", {
     email,
     password,
   });
@@ -27,7 +27,7 @@ export const loginUser = async (email, password) => {
 };
 
 export const sendMessageToBackend = async (prompt, useLocalModel, email) => {
-  const endpoint = useLocalModel ? "/api/support/local" : "/api/support/cloud";
+  const endpoint = useLocalModel ? "/support/local" : "/support/cloud";
 
   try {
     const response = await api.post(endpoint, {
